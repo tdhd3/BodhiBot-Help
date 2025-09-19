@@ -40,7 +40,7 @@
         .header h1 {
             color: #4a5568;
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,12 +51,19 @@
             width: 50px;
             height: 50px;
             object-fit: contain;
+            display: block;
+        }
+
+        .logo:not([src]) {
+            display: none;
         }
 
         .sub-brand {
-            font-size: 0.6em;
+            font-size: 1.2em;
             color: #718096;
             font-weight: normal;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         .header .subtitle {
@@ -193,12 +200,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><img src="logo.png" alt="菩薩小老師 Logo" class="logo"> 菩薩小老師 <span class="sub-brand">BodhiBot</span></h1>
+            <h1><img src="logo.png" alt="菩薩小老師 Logo" class="logo"> 菩薩小老師</h1>
+            <div class="sub-brand">BodhiBot</div>
             <p class="subtitle">對話型學佛 AI 幫手</p>
         </div>
 
         <div class="section">
-            <h2>📖 關於菩薩小老師</h2>
+            <h2>📖 關於 菩薩小老師</h2>
             <p>菩薩小老師 (BodhiBot) 是一個發布於 LINE 平台的對話型學佛 AI 幫手，利用不同觀點的會話協助用戶自主深入經藏。</p>
             
             <h3>✨ 主要功能</h3>
