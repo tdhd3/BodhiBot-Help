@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BodhiBot 使用說明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .header h1 {
+            color: #4a5568;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #718096;
+            font-size: 1.2em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2d3748;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section h3 {
+            color: #4a5568;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            background: #f7fafc;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #48bb78;
+        }
+
+        .feature-list li::before {
+            content: "✅ ";
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .usage-steps {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .usage-steps ol {
+            padding-left: 20px;
+        }
+
+        .usage-steps li {
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+
+        .faq-item {
+            background: #fff5f5;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f56565;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #c53030;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #4a5568;
+        }
+
+        .warning-box {
+            background: #fffaf0;
+            border: 1px solid #f6ad55;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background: #f0fff4;
+            border: 1px solid #68d391;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .tip-box::before {
+            content: "💡 ";
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+        }
+
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧘‍♂️ BodhiBot</h1>
+            <p class="subtitle">佛教智慧對話機器人</p>
+        </div>
+
+        <div class="section">
+            <h2>📖 關於 BodhiBot</h2>
+            <p>BodhiBot 是一個基於 LINE 平台的佛教智慧對話機器人，整合了先進的 AI 技術與佛教經典知識，為您提供智慧的對話體驗。</p>
+            
+            <h3>✨ 主要功能</h3>
+            <ul class="feature-list">
+                <li>佛教經典智慧問答</li>
+                <li>禪修指導與建議</li>
+                <li>佛教概念解釋</li>
+                <li>個人化對話記憶</li>
+                <li>智能內容審核</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🚀 使用方式</h2>
+            
+            <div class="usage-steps">
+                <h3>📱 開始使用</h3>
+                <ol>
+                    <li>在 LINE 中搜尋並加入 BodhiBot</li>
+                    <li>發送任意訊息開始對話</li>
+                    <li>直接輸入您的問題或想法</li>
+                    <li>BodhiBot 會根據佛教智慧為您解答</li>
+                </ol>
+            </div>
+
+            <h3>💬 對話範例</h3>
+            <div class="tip-box">
+                <strong>您：</strong>什麼是無常？<br>
+                <strong>BodhiBot：</strong>無常是佛教的核心概念之一，指的是世間萬物都在不斷變化，沒有永恆不變的事物...
+            </div>
+
+            <div class="tip-box">
+                <strong>您：</strong>如何開始禪修？<br>
+                <strong>BodhiBot：</strong>禪修是培養內心平靜與覺察的修行方法。建議您先從簡單的呼吸觀照開始...
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>❓ 常見問題</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: BodhiBot 如何確保回答的準確性？</div>
+                <div class="faq-answer">A: BodhiBot 整合了多層內容審核機制，包括關鍵字過濾、語意路由和風險提示，確保回答符合佛教教義且適切。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 可以詢問非佛教相關的問題嗎？</div>
+                <div class="faq-answer">A: 可以，但 BodhiBot 會優先處理與佛教、禪修、智慧相關的問題。對於其他問題，會嘗試從佛教角度提供智慧建議。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何清除對話記憶？</div>
+                <div class="faq-answer">A: 您可以輸入 <span class="code">/reset</span> 或使用快速回覆按鈕中的「清除對話」功能來重置會話記憶。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: BodhiBot 會記住我們的對話嗎？</div>
+                <div class="faq-answer">A: BodhiBot 會暫時記住最近的對話內容以提供更好的上下文理解，但這些記憶會在會話結束後自動清除。</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ 注意事項</h2>
+            
+            <div class="warning-box">
+                <strong>重要提醒：</strong>BodhiBot 提供的建議僅供參考，不能替代專業的佛教導師指導或心理諮商。如有嚴重心理或靈性問題，建議尋求專業協助。
+            </div>
+
+            <h3>🛡️ 隱私保護</h3>
+            <ul class="feature-list">
+                <li>對話內容不會被永久儲存</li>
+                <li>個人資訊受到嚴格保護</li>
+                <li>遵循 LINE 平台的隱私政策</li>
+            </ul>
+
+            <h3>📝 使用規範</h3>
+            <ul class="feature-list">
+                <li>請保持友善和尊重的對話態度</li>
+                <li>避免詢問不當或有害內容</li>
+                <li>尊重佛教教義和傳統</li>
+                <li>適當使用，避免過度依賴</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔄 快速功能</h2>
+            
+            <div class="tip-box">
+                <strong>快速回覆按鈕：</strong>
+                <ul>
+                    <li><span class="code">清除對話</span> - 重置會話記憶</li>
+                    <li><span class="code">意見回饋</span> - 提供使用建議</li>
+                    <li><span class="code">使用說明</span> - 查看本說明頁面</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 BodhiBot - 讓智慧與慈悲陪伴您的每一天</p>
+            <p>如有技術問題或建議，歡迎透過意見回饋功能聯繫我們</p>
+        </div>
+    </div>
+</body>
+</html>
