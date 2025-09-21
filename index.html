@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>菩薩小老師 使用說明</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,8 +21,15 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--page-gradient-start) 0%, var(--page-gradient-end) 100%);
             min-height: 100vh;
+        }
+
+        :root {
+            --header-bg-image: url('header-bg.png');
+            --header-bg-opacity: 0.30;
+            --page-gradient-start: #c8d5e8; /* 上方靛紫較亮 */
+            --page-gradient-end: #a8b8d0;   /* 下方靛紫較深 */
         }
 
         .container {
@@ -35,16 +48,39 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: var(--header-bg-image);
+            background-size: cover;
+            background-position: center;
+            opacity: var(--header-bg-opacity);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .header > * {
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
-            color: #4a5568;
+            color: #2d3748;
             font-size: 2.5em;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 14px;
+            letter-spacing: 0.02em;
             padding-right: 45px;
         }
 
@@ -60,16 +96,33 @@
         }
 
         .sub-brand {
-            font-size: 1.2em;
-            color: #718096;
-            font-weight: normal;
+            font-size: 0.95em;
+            color: #4a5568;
+            font-weight: 600;
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing: 0.06em;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .header .subtitle {
-            color: #718096;
-            font-size: 1.2em;
+            color: #4a5568;
+            font-size: 1.1em;
+            letter-spacing: 0.02em;
+            margin-top: 4px;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #2b6cb0;
+            background: rgba(235, 248, 255, 0.95);
+            border: 1px solid #63b3ed;
+            border-radius: 6px;
+            padding: 4px 10px;
+            margin-top: 8px;
         }
 
         .section {
@@ -170,6 +223,19 @@
             font-weight: bold;
         }
 
+        .info-box {
+            background: #ebf8ff;
+            border: 1px solid #63b3ed;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #2b6cb0;
+        }
+        .info-box::before {
+            content: "ℹ️ ";
+            font-weight: bold;
+        }
+
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -196,6 +262,16 @@
                 font-size: 2em;
             }
         }
+
+        /* Desktop: 側記於右上角顯示 Beta 版本資訊 */
+        @media (min-width: 900px) {
+            .beta-badge {
+                position: absolute;
+                right: 20px;
+                top: 16px;
+                margin: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -204,6 +280,11 @@
             <h1><img src="logo.png" alt="菩薩小老師 Logo" class="logo"> 菩薩小老師</h1>
             <div class="sub-brand">BodhiBot</div>
             <p class="subtitle">對話型學佛 AI 幫手</p>
+            <div class="beta-badge">[Beta] V0.1.0</div>
+        </div>
+
+        <div class="info-box">
+            <strong>Beta版本說明：</strong>AI 會記住最近 3 輪對話（約 10 分鐘）。超過後會自動重置，請簡短重述背景；點擊<strong>清除對話</strong>或輸入 <span class="code">/reset</span> 清除對話。
         </div>
 
         <div class="section">
@@ -232,6 +313,7 @@
                     <li>菩薩小老師會根據佛教智慧為您解答</li>
                 </ol>
             </div>
+            <p style="color:#718096; font-size: 0.95em; margin-top: 6px;">若想延續先前話題，請簡短重述背景（如主題、關鍵詞）。</p>
 
             <h3>💬 對話範例</h3>
             <div class="tip-box">
@@ -265,7 +347,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">Q: 菩薩小老師會記住我們的對話嗎？</div>
-                <div class="faq-answer">A: 菩薩小老師會暫時記住最近的對話內容以提供更好的上下文理解，但這些記憶會在會話結束後自動清除。</div>
+                <div class="faq-answer">A: 會。我會記住最近 3 輪對話（或 10 分鐘內）的內容以理解上下文；超過輪數或時間會自動清除，不會永久保存。</div>
             </div>
         </div>
 
