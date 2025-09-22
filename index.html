@@ -313,15 +313,20 @@
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 1.8em;
                 padding-right: 0;
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
             }
 
             .logo {
                 width: 40px;
                 height: 40px;
+            }
+            
+            .beta-badge {
+                position: static;
+                margin-top: 10px;
             }
 
             .section h2 {
@@ -384,13 +389,12 @@
 
         <section class="section" aria-labelledby="about-heading">
             <h2 id="about-heading">📖 關於 菩薩小老師</h2>
-            <p>菩薩小老師 (BodhiBot) 是一個發布於 LINE 平台的對話型學佛 AI 幫手，利用不同觀點的會話協助用戶自主深入經藏。</p>
+            <p>菩薩小老師 (BodhiBot) 是一個發布於 LINE 平台的對話型學佛 AI 幫手，利用不同觀點的會話協助用戶自主深入經藏，並從生活與時事關照智慧。</p>
             
             <h3>✨ 主要功能</h3>
             <ul class="feature-list" role="list" aria-label="主要功能列表">
-                <li role="listitem">佛教經典智慧問答</li>
-                <li role="listitem">禪修觀照</li>
-                <li role="listitem">學佛常見概念解釋</li>
+                <li role="listitem">經典與名相釋義</li>
+                <li role="listitem">公案與修行問答</li>
                 <li role="listitem">將生活煩惱轉菩提</li>
             </ul>
         </section>
@@ -401,13 +405,13 @@
             <div class="usage-steps">
                 <h3>📱 開始使用</h3>
                 <ol role="list" aria-label="使用步驟">
-                    <li role="listitem">在 LINE 中搜尋並加入菩薩小老師</li>
+                    <li role="listitem">在 LINE 中搜尋「菩薩小老師」</li>
                     <li role="listitem">發送任意訊息開始對話</li>
-                    <li role="listitem">直接輸入您的問題或想法</li>
-                    <li role="listitem">菩薩小老師會根據佛教智慧為您解答</li>
+                    <li role="listitem">直接輸入您的問題</li>
+                    <li role="listitem">菩薩小老師會提供文字回應</li>
                 </ol>
                 <div class="tip-box" style="margin-top: 15px;" role="note" aria-label="使用提示">
-                    <strong>提示：</strong>目前只支持單人對話，無法加入群組或多人對話。
+                    <strong>提示：</strong>目前僅支持單人對話，無法加入群組。
                 </div>
             </div>
             <p style="color:#718096; font-size: 0.95em; margin-top: 6px;">若想延續先前話題，請簡短重述背景（如主題、關鍵詞）。</p>
@@ -428,23 +432,13 @@
             <h2 id="faq-heading">❓ 常見問題</h2>
             
             <div class="faq-item" role="article" aria-labelledby="faq1">
-                <div class="faq-question" id="faq1">Q: 菩薩小老師如何確保回答的準確性？</div>
-                <div class="faq-answer">A: 菩薩小老師整合了多層內容審核機制，包括關鍵字過濾、語意路由和風險提示，確保回答符合佛教教義且適切。</div>
+                <div class="faq-question" id="faq1">Q: 如何清除對話記憶？</div>
+                <div class="faq-answer">A: 輸入 <span class="code">/reset</span> 或點擊「清除對話」按鈕</div>
             </div>
 
             <div class="faq-item" role="article" aria-labelledby="faq2">
-                <div class="faq-question" id="faq2">Q: 可以詢問非佛教相關的問題嗎？</div>
-                <div class="faq-answer">A: 可以，但菩薩小老師會優先處理與佛教、禪修、智慧相關的問題。對於其他問題，會嘗試從佛教角度提供智慧建議。</div>
-            </div>
-
-            <div class="faq-item" role="article" aria-labelledby="faq3">
-                <div class="faq-question" id="faq3">Q: 如何清除對話記憶？</div>
-                <div class="faq-answer">A: 您可以輸入 <span class="code">/reset</span> 或使用快速回覆按鈕中的「清除對話」功能來重置會話記憶。</div>
-            </div>
-
-            <div class="faq-item" role="article" aria-labelledby="faq4">
-                <div class="faq-question" id="faq4">Q: 菩薩小老師會記住我們的對話嗎？</div>
-                <div class="faq-answer">A: 會。我會記住最近 3 輪對話（或 10 分鐘內）的內容以理解上下文；超過輪數或時間會自動清除，不會永久保存。</div>
+                <div class="faq-question" id="faq2">Q: 可以問非佛教問題嗎？</div>
+                <div class="faq-answer">A: 可以，但會從學佛的觀點提供智慧建議</div>
             </div>
         </section>
 
@@ -458,7 +452,7 @@
             <h3>🛡️ 隱私保護</h3>
             <ul class="feature-list" role="list" aria-label="隱私保護措施">
                 <li role="listitem">對話內容不會被永久儲存</li>
-                <li role="listitem">此系統不會擷取個人資訊</li>
+                <li role="listitem">所有資料均匿名化處理</li>
                 <li role="listitem">所有隱私相關的規範，會在版本更新後主動告知用戶</li>
             </ul>
 
@@ -466,13 +460,13 @@
             <ul class="feature-list" role="list" aria-label="使用規範">
                 <li role="listitem">請保持友善和尊重的對話態度</li>
                 <li role="listitem">避免詢問不當或有害內容</li>
-                <li role="listitem">尊重佛教經典與正向價值觀</li>
+                <li role="listitem">尊重佛教經典與道德倫理</li>
                 <li role="listitem">適當使用，請勿依賴工具</li>
             </ul>
         </section>
 
         <section class="section" aria-labelledby="features-heading">
-            <h2 id="features-heading">🔄 快速功能</h2>
+            <h2 id="features-heading">⚡ 快速功能</h2>
             
             <div class="tip-box" role="complementary" aria-label="快速回覆按鈕說明">
                 <strong>快速回覆按鈕：</strong>
